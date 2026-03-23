@@ -500,6 +500,22 @@ header {
 }
 .form-success.show { display: flex; }
 
+.form-error {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: #fef2f2;
+  border: 1.5px solid #fca5a5;
+  border-radius: var(--r-md);
+  padding: 14px 18px;
+  color: #b91c1c;
+  font-weight: 500;
+  font-size: .9rem;
+  margin-top: 16px;
+}
+.form-error a { color: inherit; text-decoration: underline; }
+.form-error.show { display: flex; }
+
 /* ── Company Info Table ── */
 .info-table-wrap {
   background: var(--surface);

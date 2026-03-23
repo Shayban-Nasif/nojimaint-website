@@ -128,7 +128,7 @@ document.querySelectorAll('form[data-success-id]').forEach(form => {
     });
   });
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
 
     let valid = true;
@@ -145,8 +145,52 @@ document.querySelectorAll('form[data-success-id]').forEach(form => {
     }
 
     const successEl = document.getElementById(form.dataset.successId);
+    const errorEl   = document.getElementById(form.dataset.errorId);
     const submitBtn = form.querySelector('[type="submit"]');
+    const formspreeId = form.dataset.formspree;
 
+    if (formspreeId) {
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute('aria-busy', 'true'); }
+      if (errorEl)   errorEl.classList.remove('show');
+
+      try {
+        const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+          method : 'POST',
+          headers: { 'Accept': 'application/json' },
+          body   : new FormData(form),
+        });
+
+        if (res.ok) {
+          if (successEl) {
+            successEl.classList.add('show');
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          form.reset();
+          fields.forEach(f => f.classList.remove('is-valid', 'is-error'));
+          form.querySelectorAll('.file-preview').forEach(p => p.classList.remove('show'));
+          form.querySelectorAll('.file-upload-zone').forEach(z => z.classList.remove('has-file'));
+          setTimeout(() => {
+            if (successEl) successEl.classList.remove('show');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
+          }, 7000);
+        } else {
+          if (errorEl) {
+            errorEl.classList.add('show');
+            errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
+        }
+      } catch (_) {
+        if (errorEl) {
+          errorEl.classList.add('show');
+          errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
+      }
+      return;
+    }
+
+    /* fallback: no Formspree ID — just show success locally */
     if (successEl) {
       successEl.classList.add('show');
       form.reset();
