@@ -150,8 +150,23 @@ document.querySelectorAll('form[data-success-id]').forEach(form => {
     const workerUrl = form.dataset.worker;
 
     if (workerUrl) {
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute('aria-busy', 'true'); }
-      if (errorEl)   errorEl.classList.remove('show');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      const loadingLabel = isJa ? '送信中…' : 'Sending…';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.innerHTML = `<span class="btn-spinner" aria-hidden="true"></span>${loadingLabel}`;
+      }
+      if (errorEl) errorEl.classList.remove('show');
+
+      const restoreBtn = () => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute('aria-busy');
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+      };
 
       const payload = {};
       new FormData(form).forEach((val, key) => { payload[key] = val; });
@@ -173,23 +188,23 @@ document.querySelectorAll('form[data-success-id]').forEach(form => {
           fields.forEach(f => f.classList.remove('is-valid', 'is-error'));
           form.querySelectorAll('.file-preview').forEach(p => p.classList.remove('show'));
           form.querySelectorAll('.file-upload-zone').forEach(z => z.classList.remove('has-file'));
+          restoreBtn();
           setTimeout(() => {
             if (successEl) successEl.classList.remove('show');
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
           }, 7000);
         } else {
           if (errorEl) {
             errorEl.classList.add('show');
             errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
+          restoreBtn();
         }
       } catch (_) {
         if (errorEl) {
           errorEl.classList.add('show');
           errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
+        restoreBtn();
       }
       return;
     }

@@ -143,6 +143,7 @@ section { padding: 80px 0; }
 }
 .btn-primary { background: var(--primary); color: #fff; }
 .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30,74,110,.35); }
+.btn-primary:disabled { opacity: .75; cursor: not-allowed; transform: none; box-shadow: none; }
 .btn-white { background: #fff; color: var(--primary); }
 .btn-white:hover { background: #f0f9ff; transform: translateY(-2px); }
 .btn-outline { border: 2px solid var(--primary); background: transparent; color: var(--primary); }
@@ -150,6 +151,21 @@ section { padding: 80px 0; }
 .btn-outline-white { border: 2px solid rgba(255,255,255,.6); background: transparent; color: #fff; }
 .btn-outline-white:hover { background: rgba(255,255,255,.15); border-color: #fff; }
 .btn-sm { padding: 8px 18px; font-size: .83rem; }
+
+/* ── Button spinner ── */
+@keyframes btn-spin { to { transform: rotate(360deg); } }
+.btn-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-spin .7s linear infinite;
+  vertical-align: middle;
+  margin-right: 7px;
+  flex-shrink: 0;
+}
 
 /* ── Header / Nav ── */
 header {
