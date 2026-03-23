@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── Home ── -->
+  <url>
+    <loc>https://nojimaint.jp/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://nojimaint.jp/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+
+  <!-- ── Services ── -->
+  <url>
+    <loc>https://nojimaint.jp/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/services.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://nojimaint.jp/ja/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/services.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+
+  <!-- ── Real Estate ── -->
+  <url>
+    <loc>https://nojimaint.jp/en/real-estate.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/real-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/real-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/real-estate.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://nojimaint.jp/ja/real-estate.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/real-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/real-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/real-estate.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+
+  <!-- ── Car Sales ── -->
+  <url>
+    <loc>https://nojimaint.jp/en/car-sales.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/car-sales.html"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/car-sales.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/car-sales.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://nojimaint.jp/ja/car-sales.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/car-sales.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/car-sales.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/car-sales.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+
+  <!-- ── Company ── -->
+  <url>
+    <loc>https://nojimaint.jp/en/company.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/company.html"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/company.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/company.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://nojimaint.jp/ja/company.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/company.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/company.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/company.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+
+  <!-- ── Contact ── -->
+  <url>
+    <loc>https://nojimaint.jp/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/contact.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://nojimaint.jp/ja/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/contact.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+
+  <!-- ── Recruitment ── -->
+  <url>
+    <loc>https://nojimaint.jp/en/recruitment.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/recruitment.html"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/recruitment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/recruitment.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://nojimaint.jp/ja/recruitment.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/recruitment.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/recruitment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/en/recruitment.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+
+</urlset>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0f2b3d"/>
+      <stop offset="55%"  stop-color="#1e4a6e"/>
+      <stop offset="100%" stop-color="#2d7ab8"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,0.055)"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Accent bar top -->
+  <rect x="0" y="0" width="6" height="630" fill="#2d7ab8" opacity="0.8"/>
+
+  <!-- Logo mark -->
+  <rect x="88" y="200" width="56" height="56" rx="13" fill="rgba(255,255,255,0.15)"/>
+  <text x="116" y="244" font-family="system-ui,-apple-system,sans-serif" font-size="38" font-weight="700" fill="white" text-anchor="middle">N</text>
+
+  <!-- Brand name -->
+  <text x="168" y="244" font-family="system-ui,-apple-system,sans-serif" font-size="40" font-weight="700" fill="white">Nojima Int</text>
+
+  <!-- Tagline -->
+  <text x="88" y="310" font-family="system-ui,-apple-system,sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.55)" letter-spacing="2">CONSULTING &amp; MULTI-SERVICE</text>
+
+  <!-- Divider -->
+  <rect x="88" y="345" width="80" height="3" rx="2" fill="#2d7ab8" opacity="0.7"/>
+
+  <!-- Headline -->
+  <text x="88" y="420" font-family="system-ui,-apple-system,sans-serif" font-size="52" font-weight="700" fill="white">Comprehensive Services</text>
+  <text x="88" y="480" font-family="system-ui,-apple-system,sans-serif" font-size="52" font-weight="700" fill="white">for Life in Japan</text>
+
+  <!-- Service pills -->
+  <rect x="88"  y="520" width="140" height="34" rx="17" fill="rgba(255,255,255,0.12)"/>
+  <text x="158" y="542" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="rgba(255,255,255,0.8)" text-anchor="middle">Real Estate</text>
+
+  <rect x="238" y="520" width="90" height="34" rx="17" fill="rgba(255,255,255,0.12)"/>
+  <text x="283" y="542" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="rgba(255,255,255,0.8)" text-anchor="middle">Visa</text>
+
+  <rect x="338" y="520" width="110" height="34" rx="17" fill="rgba(255,255,255,0.12)"/>
+  <text x="393" y="542" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="rgba(255,255,255,0.8)" text-anchor="middle">Car Sales</text>
+
+  <rect x="458" y="520" width="130" height="34" rx="17" fill="rgba(255,255,255,0.12)"/>
+  <text x="523" y="542" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="rgba(255,255,255,0.8)" text-anchor="middle">Electricity</text>
+
+  <rect x="598" y="520" width="100" height="34" rx="17" fill="rgba(255,255,255,0.12)"/>
+  <text x="648" y="542" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="rgba(255,255,255,0.8)" text-anchor="middle">Career</text>
+
+  <!-- URL bottom right -->
+  <text x="1112" y="598" font-family="system-ui,-apple-system,sans-serif" font-size="20" fill="rgba(255,255,255,0.4)" text-anchor="end">nojimaint.jp</text>
+</svg>
