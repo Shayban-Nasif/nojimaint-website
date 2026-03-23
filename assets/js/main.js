@@ -147,20 +147,24 @@ document.querySelectorAll('form[data-success-id]').forEach(form => {
     const successEl = document.getElementById(form.dataset.successId);
     const errorEl   = document.getElementById(form.dataset.errorId);
     const submitBtn = form.querySelector('[type="submit"]');
-    const formspreeId = form.dataset.formspree;
+    const workerUrl = form.dataset.worker;
 
-    if (formspreeId) {
+    if (workerUrl) {
       if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute('aria-busy', 'true'); }
       if (errorEl)   errorEl.classList.remove('show');
 
-      try {
-        const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
-          method : 'POST',
-          headers: { 'Accept': 'application/json' },
-          body   : new FormData(form),
-        });
+      const payload = {};
+      new FormData(form).forEach((val, key) => { payload[key] = val; });
 
-        if (res.ok) {
+      try {
+        const res  = await fetch(workerUrl, {
+          method : 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body   : JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.ok) {
           if (successEl) {
             successEl.classList.add('show');
             successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

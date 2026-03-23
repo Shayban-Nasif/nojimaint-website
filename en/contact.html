@@ -123,7 +123,8 @@
         <div>
           <div class="form-wrap">
             <h3 style="font-size:1.2rem;font-weight:600;margin-bottom:24px;color:var(--primary-dark)">Send a Message</h3>
-            <form data-success-id="contact-success" data-error-id="contact-error" data-formspree="xreynzow" novalidate>
+            <form data-success-id="contact-success" data-error-id="contact-error" data-worker="https://form-to-email.takiuddinahmed.workers.dev" novalidate>
+              <input type="hidden" name="title" value="New Contact Enquiry — Nojima Int Website">
               <div class="form-row-2">
                 <div class="fg"><label for="ct-name">Full Name *</label><input type="text" id="ct-name" name="name" required autocomplete="name"></div>
                 <div class="fg"><label for="ct-email">Email Address *</label><input type="email" id="ct-email" name="email" required autocomplete="email"></div>
