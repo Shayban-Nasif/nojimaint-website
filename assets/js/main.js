@@ -157,11 +157,11 @@ document.querySelectorAll('form[data-success-id]').forEach(form => {
       new FormData(form).forEach((val, key) => { payload[key] = val; });
 
       try {
-        const res  = await fetch(workerUrl, {
-          method : 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body   : JSON.stringify(payload),
-        });
+        const isMultipart = form.enctype === 'multipart/form-data';
+        const res  = await fetch(workerUrl, isMultipart
+          ? { method: 'POST', body: new FormData(form) }
+          : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }
+        );
         const data = await res.json().catch(() => ({}));
 
         if (res.ok && data.ok) {
