@@ -1,3 +1,26 @@
+/* ── Language preference persistence ── */
+(function () {
+  var KEY = 'nojima_lang';
+
+  // Seed preference on first-ever page visit (does not overwrite an explicit choice)
+  try {
+    if (!localStorage.getItem(KEY)) {
+      var pageLang = document.documentElement.lang;
+      if (pageLang) localStorage.setItem(KEY, pageLang);
+    }
+  } catch (e) {}
+
+  // Explicit lang button click always wins
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = btn.getAttribute('hreflang') || '';
+      if (lang) {
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      }
+    });
+  });
+}());
+
 /* ── Mobile Menu ── */
 (function () {
   const hamburger = document.querySelector('.hamburger');

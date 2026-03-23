@@ -3,13 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nojima Int Co., Ltd.</title>
-  <meta name="robots" content="noindex">
-  <script>
-    var l = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    window.location.replace(l.startsWith('ja') ? 'ja/index.html' : 'en/index.html');
-  </script>
+  <title>Nojima Int Co., Ltd. | Consulting &amp; Multi-Service Solutions in Japan</title>
+  <meta name="description" content="Nojima Int offers real estate consulting, visa support, electricity services, mobile SIM cards, car sales, and career support in Japan. Multilingual service.">
+  <link rel="canonical" href="https://nojimaint.jp/en/">
+  <link rel="alternate" hreflang="en"        href="https://nojimaint.jp/en/">
+  <link rel="alternate" hreflang="ja"        href="https://nojimaint.jp/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://nojimaint.jp/">
+  <!-- Open Graph -->
+  <meta property="og:type"              content="website">
+  <meta property="og:title"             content="Nojima Int Co., Ltd. | Consulting &amp; Multi-Service Solutions in Japan">
+  <meta property="og:description"       content="Real estate, visa support, electricity, SIM cards, car sales and career services in Japan.">
+  <meta property="og:url"               content="https://nojimaint.jp/">
+  <meta property="og:locale"            content="en_US">
+  <meta property="og:locale:alternate"  content="ja_JP">
+  <meta property="og:image"             content="https://nojimaint.jp/assets/images/og-image.svg">
+  <meta property="og:image:width"       content="1200">
+  <meta property="og:image:height"      content="630">
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Nojima Int Co., Ltd. | Consulting &amp; Multi-Service Solutions in Japan">
+  <meta name="twitter:description" content="Real estate, visa support, electricity, SIM cards, car sales and career services in Japan.">
+  <meta name="twitter:image"       content="https://nojimaint.jp/assets/images/og-image.svg">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#1e4a6e">
+  <!-- Fallback for no-JS browsers -->
   <meta http-equiv="refresh" content="0; url=en/index.html">
+  <script>
+    (function () {
+      var stored = '';
+      try { stored = localStorage.getItem('nojima_lang') || ''; } catch (e) {}
+      var lang = stored || (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      window.location.replace(lang.startsWith('ja') ? 'ja/index.html' : 'en/index.html');
+    }());
+  </script>
 </head>
 <body>
   <p>Redirecting… <a href="en/index.html">English</a> | <a href="ja/index.html">日本語</a></p>
