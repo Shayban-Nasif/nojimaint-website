@@ -353,7 +353,7 @@ header {
   padding: 40px;
   margin-top: 48px;
 }
-.inquiry-section h2 { font-size: 1.35rem; font-weight: 600; margin-bottom: 24px; color: var(--primary-dark); }
+.inquiry-section h2 { font-size: 1.35rem; font-weight: 600; margin-bottom: 24px; color: var(--primary-dark); scroll-margin-top: 90px; }
 
 /* ── Form Wrap ── */
 .form-wrap {
