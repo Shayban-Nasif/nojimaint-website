@@ -53,7 +53,7 @@
   --bg:            #f4f6f9;
   --surface:       #ffffff;
   --text:          #1a2533;
-  --muted:         #64748b;
+  --muted:         #5f6e83;
   --border:        #e2e8f0;
   --success:       #16a34a;
   --r-sm:  6px;
@@ -899,10 +899,10 @@ footer { background: #07111e; color: #6e8099; }
   gap: 32px;
 }
 .footer-brand .footer-logo { height: 56px; width: auto; }
-.footer-brand p { font-size: .82rem; margin-top: 14px; line-height: 1.7; color: #5a7090; }
-.footer-col h5 { color: #c8d8e8; font-size: .78rem; font-weight: 700; margin-bottom: 16px; letter-spacing: 1.2px; text-transform: uppercase; }
+.footer-brand p { font-size: .82rem; margin-top: 14px; line-height: 1.7; color: #7a94ae; }
+.footer-col h3 { color: #c8d8e8; font-size: .78rem; font-weight: 700; margin-bottom: 16px; letter-spacing: 1.2px; text-transform: uppercase; }
 .footer-links { display: flex; flex-direction: column; gap: 9px; }
-.footer-links a { font-size: .82rem; color: #5a7090; transition: var(--ease); }
+.footer-links a { font-size: .82rem; color: #7a94ae; transition: var(--ease); }
 .footer-links a:hover { color: #c8d8e8; padding-left: 4px; }
 .footer-contact p { font-size: .8rem; margin-bottom: 7px; line-height: 1.6; }
 .footer-contact a { color: #7a9ab8; }
@@ -917,7 +917,7 @@ footer { background: #07111e; color: #6e8099; }
   flex-wrap: wrap;
   gap: 10px;
 }
-.footer-bottom a { color: #5a7090; }
+.footer-bottom a { color: #7a94ae; }
 .footer-bottom a:hover { color: #c8d8e8; }
 
 /* ── Company Grid ── */

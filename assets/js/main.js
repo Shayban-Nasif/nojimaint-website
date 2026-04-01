@@ -3,10 +3,14 @@
   const header = document.querySelector('header');
   if (!header) return;
   function onScroll() {
-    header.classList.toggle('scrolled', window.scrollY > 20);
+    requestAnimationFrame(function () {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  requestAnimationFrame(function () {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
 }());
 
 /* ── Language preference persistence ── */
