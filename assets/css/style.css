@@ -592,7 +592,7 @@ header.scrolled {
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .fg { margin-bottom: 18px; }
 .fg label { display: block; font-size: .85rem; font-weight: 600; color: var(--text); margin-bottom: 7px; }
-.fg input,
+.fg input:not([type="checkbox"]),
 .fg select,
 .fg textarea {
   width: 100%;
@@ -607,7 +607,7 @@ header.scrolled {
   outline: none;
   -webkit-appearance: none;
 }
-.fg input:focus,
+.fg input:not([type="checkbox"]):focus,
 .fg select:focus,
 .fg textarea:focus { border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(37,99,235,.1); }
 .fg textarea { resize: vertical; min-height: 110px; }
@@ -615,16 +615,16 @@ header.scrolled {
 .form-note { font-size: .77rem; color: var(--muted); margin-top: 4px; }
 
 /* ── Field Validation States ── */
-.fg input.is-error,
+.fg input:not([type="checkbox"]).is-error,
 .fg select.is-error,
 .fg textarea.is-error { border-color: #ef4444; background: #fff8f8; }
-.fg input.is-error:focus,
+.fg input:not([type="checkbox"]).is-error:focus,
 .fg select.is-error:focus,
 .fg textarea.is-error:focus { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,.12); }
-.fg input.is-valid,
+.fg input:not([type="checkbox"]).is-valid,
 .fg select.is-valid,
 .fg textarea.is-valid { border-color: #22c55e; background: #f0fdf4; }
-.fg input.is-valid:focus,
+.fg input:not([type="checkbox"]).is-valid:focus,
 .fg select.is-valid:focus,
 .fg textarea.is-valid:focus { border-color: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,.12); }
 .field-error {
@@ -982,6 +982,45 @@ footer { background: #07111e; color: #6e8099; }
 
   .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
   .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ── Privacy policy checkbox ── */
+.privacy-check-fg {
+  margin-bottom: 16px;
+}
+.privacy-check-fg label.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0;
+  color: var(--text);
+}
+.privacy-check-fg input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+.privacy-check-fg input[type="checkbox"]:focus {
+  border: none;
+  box-shadow: none;
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+.privacy-check-fg .checkbox-label a {
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 @media (max-width: 520px) {

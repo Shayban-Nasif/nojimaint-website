@@ -72,6 +72,10 @@ const ERR = {
 
 /* ── Validation helpers ── */
 function getErrorMsg(field) {
+  if (field.type === 'checkbox') {
+    return (field.required && !field.checked) ? ERR.required : null;
+  }
+
   const v = field.value;
 
   if (field.required && !v.trim()) return ERR.required;
@@ -107,7 +111,7 @@ function markError(field, msg) {
 function clearMark(field) {
   field.classList.remove('is-error');
   field.removeAttribute('aria-invalid');
-  if (field.value.trim()) field.classList.add('is-valid');
+  if (field.type !== 'checkbox' && field.value.trim()) field.classList.add('is-valid');
   const el = field.closest('.fg')?.querySelector('.field-error');
   if (el) el.remove();
 }
