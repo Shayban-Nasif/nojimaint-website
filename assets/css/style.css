@@ -927,14 +927,14 @@ footer { background: #07111e; color: #6e8099; }
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-img-panel { clip-path: none; min-height: 320px; width: 100%; }
+  .hero-img-panel { order: -1; clip-path: none; min-height: 320px; width: 100%; }
   .hero-text-col { padding: 100px 0; justify-content: center; }
   .hero-content { text-align: center; margin: 0 auto; }
   .hero-actions { justify-content: center; }
 
   .page-hero-split { grid-template-columns: 1fr; }
   .page-hero-split-text { justify-content: flex-start; padding: 52px 32px; }
-  .page-hero-split-img { clip-path: none; min-height: 300px; }
+  .page-hero-split-img { order: -1; clip-path: none; min-height: 300px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
