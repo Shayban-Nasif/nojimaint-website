@@ -285,6 +285,10 @@ header.scrolled {
 }
 .hero-img-panel {
   background-image: url('../images/home-page.png');
+  background-image: image-set(
+    url('../images/home-page.webp') type('image/webp'),
+    url('../images/home-page.png') type('image/png')
+  );
   background-size: cover;
   background-position: center top;
   clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%);
@@ -923,7 +927,7 @@ footer { background: #07111e; color: #6e8099; }
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-img-panel { display: none; }
+  .hero-img-panel { clip-path: none; min-height: 320px; width: 100%; }
   .hero-text-col { padding: 100px 0; justify-content: center; }
   .hero-content { text-align: center; margin: 0 auto; }
   .hero-actions { justify-content: center; }
@@ -1033,6 +1037,7 @@ footer { background: #07111e; color: #6e8099; }
   .services-grid { grid-template-columns: 1fr; }
   .hero { min-height: 70vh; }
   .hero-text-col { padding: 80px 0; }
+  .hero-img-panel { min-height: 240px; }
   .hero-stats-row { flex-direction: column; gap: 8px; }
   .hero-stat-badge { font-size: .8rem; }
   .page-hero-split-img { min-height: 200px; }
