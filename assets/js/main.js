@@ -1,3 +1,14 @@
+/* ── Header scroll shadow ── */
+(function () {
+  const header = document.querySelector('header');
+  if (!header) return;
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}());
+
 /* ── Language preference persistence ── */
 (function () {
   var KEY = 'nojima_lang';
