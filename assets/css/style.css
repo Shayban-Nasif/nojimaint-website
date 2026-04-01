@@ -926,6 +926,9 @@ footer { background: #07111e; color: #6e8099; }
 }
 .footer-bottom a { color: #7a94ae; }
 .footer-bottom a:hover { color: #c8d8e8; }
+.footer-dev { font-size: .68rem; color: #4a6278; }
+.footer-dev a { color: #6a8ca8; }
+.footer-dev a:hover { color: #c8d8e8; }
 
 /* ── Company Grid ── */
 .company-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
