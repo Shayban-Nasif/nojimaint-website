@@ -396,34 +396,41 @@ header.scrolled {
   padding: 60px 0 52px;
 }
 
-/* ── Split Page Hero (text left + image right) ── */
-.page-hero-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* ── Stacked Page Hero (full-width image top + text below) ── */
+.page-hero-stack {
   background: linear-gradient(150deg, #060f1c 0%, #0a1e38 50%, #1a3a5c 100%);
   color: #fff;
-  min-height: 460px;
-  overflow: hidden;
 }
-.page-hero-split-text {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 64px 48px 64px 24px;
-}
-.page-hero-split-inner {
-  max-width: 560px;
+.page-hero-stack-img {
+  position: relative;
   width: 100%;
-}
-.page-hero-split-img {
+  height: clamp(300px, 55vw, 580px);
   overflow: hidden;
-  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+  background: #060f1c;
 }
-.page-hero-split-img img {
+.page-hero-stack-img picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.page-hero-stack-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   display: block;
+}
+.page-hero-stack-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(6,15,28,.3) 0%, rgba(6,15,28,.55) 60%, rgba(6,15,28,.88) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+.page-hero-stack-text {
+  padding: 36px 0 52px;
 }
 
 /* Bullet list inside page hero (real estate pain points) */
@@ -498,9 +505,9 @@ header.scrolled {
 .breadcrumb a:hover { color: #fff; }
 .breadcrumb .sep { color: rgba(255,255,255,.25); }
 .page-hero h1,
-.page-hero-split h1 { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; line-height: 1.2; }
+.page-hero-stack h1 { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; line-height: 1.2; }
 .page-hero p,
-.page-hero-split-inner > p:not(.hero-company-label) { font-size: .97rem; opacity: .65; }
+.page-hero-stack-text p:not(.hero-company-label) { font-size: .97rem; opacity: .75; }
 
 /* ── Service Cards ── */
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -932,9 +939,8 @@ footer { background: #07111e; color: #6e8099; }
   .hero-content { text-align: center; margin: 0 auto; }
   .hero-actions { justify-content: center; }
 
-  .page-hero-split { grid-template-columns: 1fr; }
-  .page-hero-split-text { justify-content: flex-start; padding: 52px 32px; }
-  .page-hero-split-img { order: -1; clip-path: none; min-height: 300px; }
+  .page-hero-stack { }
+  .page-hero-stack-text { padding: 28px 0 40px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -979,8 +985,7 @@ footer { background: #07111e; color: #6e8099; }
   .inquiry-section { padding: 28px 20px; }
   .recruit-intro { padding: 40px 28px; }
 
-  .page-hero-split-text { padding: 44px 20px; }
-  .page-hero-split h1 { font-size: clamp(1.65rem, 6vw, 2.2rem); }
+  .page-hero-stack h1 { font-size: clamp(1.65rem, 6vw, 2.2rem); }
   .hero-stat-badge { font-size: .78rem; padding: 8px 12px; }
   .hero-stats-row { gap: 8px; }
 
@@ -1040,6 +1045,5 @@ footer { background: #07111e; color: #6e8099; }
   .hero-img-panel { min-height: 240px; }
   .hero-stats-row { flex-direction: column; gap: 8px; }
   .hero-stat-badge { font-size: .8rem; }
-  .page-hero-split-img { min-height: 200px; }
-  .page-hero-split-text { padding: 36px 16px; }
+  .page-hero-stack-text { padding: 24px 0 32px; }
 }
