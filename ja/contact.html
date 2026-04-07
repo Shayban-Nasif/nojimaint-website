@@ -130,7 +130,7 @@
         <div>
           <div class="form-wrap">
             <h3 style="font-size:1.2rem;font-weight:600;margin-bottom:24px;color:var(--primary-dark)">お問い合わせフォーム</h3>
-            <form data-success-id="contact-success" data-error-id="contact-error" data-worker="https://form-to-email.takiuddinahmed.workers.dev" novalidate>
+            <form data-success-id="contact-success" data-error-id="contact-error" data-mailto="nojima.intc@gmail.com" novalidate>
               <input type="hidden" name="title" value="お問い合わせ — 能島インターナショナル株式会社">
               <div class="form-row-2">
                 <div class="fg"><label for="ct-name">お名前 *</label><input type="text" id="ct-name" name="name" required autocomplete="name"></div>
@@ -168,8 +168,8 @@
               <button type="submit" class="btn btn-primary">送信する</button>
               <p class="form-note" style="margin-top:12px">営業時間内は24時間以内にご返信いたします。</p>
             </form>
-            <div class="form-success" id="contact-success" role="alert">✅ お問い合わせを受け付けました。24時間以内にご返信いたします。</div>
-            <div class="form-error" id="contact-error" role="alert">⚠️ 送信に失敗しました。再度お試しいただくか、<a href="mailto:info@nojimaint.jp">info@nojimaint.jp</a> まで直接ご連絡ください。</div>
+            <div class="form-success" id="contact-success" role="alert">✅ メールアプリが開きました。内容をご確認の上、送信してください。</div>
+            <div class="form-error" id="contact-error" role="alert">⚠️ メールアプリを開けませんでした。<a href="mailto:info@nojimaint.jp">info@nojimaint.jp</a> まで直接ご連絡ください。</div>
           </div>
         </div>
 

@@ -126,7 +126,7 @@
         <div>
           <div class="form-wrap">
             <h3 style="font-size:1.2rem;font-weight:600;margin-bottom:24px;color:var(--primary-dark)">Send a Message</h3>
-            <form data-success-id="contact-success" data-error-id="contact-error" data-worker="https://form-to-email.takiuddinahmed.workers.dev" novalidate>
+            <form data-success-id="contact-success" data-error-id="contact-error" data-mailto="nojima.intc@gmail.com" novalidate>
               <input type="hidden" name="title" value="General Enquiry — Nojima International Co. Ltd.">
               <div class="form-row-2">
                 <div class="fg"><label for="ct-name">Full Name *</label><input type="text" id="ct-name" name="name" required autocomplete="name"></div>
@@ -164,8 +164,8 @@
               <button type="submit" class="btn btn-primary">Send Message</button>
               <p class="form-note" style="margin-top:12px">We reply within 24 hours on business days.</p>
             </form>
-            <div class="form-success" id="contact-success" role="alert">✅ Message sent! We will get back to you within 24 hours.</div>
-            <div class="form-error" id="contact-error" role="alert">⚠️ Something went wrong. Please try again or email us directly at <a href="mailto:info@nojimaint.jp">info@nojimaint.jp</a>.</div>
+            <div class="form-success" id="contact-success" role="alert">✅ Your email client has been opened with the form details. Please review and send the email to complete your enquiry.</div>
+            <div class="form-error" id="contact-error" role="alert">⚠️ Could not open your email client. Please email us directly at <a href="mailto:info@nojimaint.jp">info@nojimaint.jp</a>.</div>
           </div>
         </div>
 

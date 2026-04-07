@@ -166,81 +166,46 @@ document.querySelectorAll('form[data-success-id]').forEach(form => {
     const successEl = document.getElementById(form.dataset.successId);
     const errorEl   = document.getElementById(form.dataset.errorId);
     const submitBtn = form.querySelector('[type="submit"]');
-    const workerUrl = form.dataset.worker;
+    const mailto    = form.dataset.mailto || 'nojima.intc@gmail.com';
 
-    if (workerUrl) {
-      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
-      const loadingLabel = isJa ? '送信中…' : 'Sending…';
+    const titleField = form.querySelector('input[name="title"]');
+    const subject = titleField ? titleField.value : (isJa ? 'ウェブサイトお問い合わせ' : 'Website Enquiry');
 
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.setAttribute('aria-busy', 'true');
-        submitBtn.innerHTML = `<span class="btn-spinner" aria-hidden="true"></span>${loadingLabel}`;
-      }
-      if (errorEl) errorEl.classList.remove('show');
+    const SKIP_KEYS = new Set(['title', 'privacy_agreed', 'cv']);
+    const lines = [];
+    new FormData(form).forEach((val, key) => {
+      if (SKIP_KEYS.has(key) || !val || val instanceof File) return;
+      const field = form.querySelector(`[name="${key}"]`);
+      const label = field?.closest('.fg')?.querySelector('label');
+      const labelText = label
+        ? label.textContent.replace(/\s*\*\s*$/, '').trim()
+        : key.charAt(0).toUpperCase() + key.slice(1);
+      lines.push(`${labelText}: ${val}`);
+    });
 
-      const restoreBtn = () => {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.removeAttribute('aria-busy');
-          submitBtn.innerHTML = originalBtnHtml;
-        }
-      };
-
-      const payload = {};
-      new FormData(form).forEach((val, key) => { payload[key] = val; });
-
-      try {
-        const isMultipart = form.enctype === 'multipart/form-data';
-        const res  = await fetch(workerUrl, isMultipart
-          ? { method: 'POST', body: new FormData(form) }
-          : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }
-        );
-        const data = await res.json().catch(() => ({}));
-
-        if (res.ok && data.ok) {
-          if (successEl) {
-            successEl.classList.add('show');
-            successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-          form.reset();
-          fields.forEach(f => f.classList.remove('is-valid', 'is-error'));
-          form.querySelectorAll('.file-preview').forEach(p => p.classList.remove('show'));
-          form.querySelectorAll('.file-upload-zone').forEach(z => z.classList.remove('has-file'));
-          restoreBtn();
-          setTimeout(() => {
-            if (successEl) successEl.classList.remove('show');
-          }, 7000);
-        } else {
-          if (errorEl) {
-            errorEl.classList.add('show');
-            errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-          restoreBtn();
-        }
-      } catch (_) {
-        if (errorEl) {
-          errorEl.classList.add('show');
-          errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        restoreBtn();
-      }
-      return;
+    if (form.enctype === 'multipart/form-data') {
+      lines.push('');
+      lines.push(isJa
+        ? '※ 履歴書がある場合は、このメールに添付してください。'
+        : '* If you have a CV/Resume, please attach it to this email.');
     }
 
-    /* fallback: no Formspree ID — just show success locally */
+    const body = lines.join('\n');
+    const mailtoUrl = `mailto:${encodeURIComponent(mailto)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
     if (successEl) {
       successEl.classList.add('show');
-      form.reset();
-      fields.forEach(f => f.classList.remove('is-valid', 'is-error'));
-      form.querySelectorAll('.file-preview').forEach(p => p.classList.remove('show'));
-      form.querySelectorAll('.file-upload-zone').forEach(z => z.classList.remove('has-file'));
-      if (submitBtn) submitBtn.disabled = true;
-      setTimeout(() => {
-        successEl.classList.remove('show');
-        if (submitBtn) submitBtn.disabled = false;
-      }, 7000);
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+    form.reset();
+    fields.forEach(f => f.classList.remove('is-valid', 'is-error'));
+    form.querySelectorAll('.file-preview').forEach(p => p.classList.remove('show'));
+    form.querySelectorAll('.file-upload-zone').forEach(z => z.classList.remove('has-file'));
+    setTimeout(() => {
+      if (successEl) successEl.classList.remove('show');
+    }, 10000);
   });
 });
 

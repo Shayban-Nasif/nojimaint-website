@@ -157,7 +157,7 @@
       <div class="form-wrap">
         <h3 style="font-size:1.2rem;font-weight:600;margin-bottom:6px;color:var(--primary-dark)">Apply Now</h3>
         <p style="font-size:.88rem;color:var(--muted);margin-bottom:24px">Submit your application below. All applications are reviewed within 5 business days.</p>
-        <form data-success-id="recruit-success" data-error-id="recruit-error" data-worker="https://form-to-email.takiuddinahmed.workers.dev" enctype="multipart/form-data" novalidate>
+        <form data-success-id="recruit-success" data-error-id="recruit-error" data-mailto="nojima.intc@gmail.com" enctype="multipart/form-data" novalidate>
           <input type="hidden" name="title" value="Job Application — Nojima International Co. Ltd.">
           <div class="form-row-2">
             <div class="fg"><label for="rc-name">Full Name *</label><input type="text" id="rc-name" name="name" required autocomplete="name"></div>
@@ -210,8 +210,8 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit Application</button>
         </form>
-        <div class="form-success" id="recruit-success" role="alert">✅ Application received! We will review it and be in touch within 5 business days.</div>
-        <div class="form-error" id="recruit-error" role="alert">⚠️ Something went wrong. Please try again or email us at <a href="mailto:info@nojimaint.jp">info@nojimaint.jp</a>.</div>
+        <div class="form-success" id="recruit-success" role="alert">✅ Your email client has been opened with your application details. Please attach your CV/Resume and send the email.</div>
+        <div class="form-error" id="recruit-error" role="alert">⚠️ Could not open your email client. Please email us at <a href="mailto:info@nojimaint.jp">info@nojimaint.jp</a> with your application.</div>
       </div>
 
     </div>
