@@ -499,6 +499,8 @@ header.scrolled {
 .svc-icon svg { width: 24px; height: 24px; }
 .svc-card h3 { font-size: .97rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; }
 .svc-card p  { font-size: .86rem; color: var(--muted); line-height: 1.6; }
+.svc-link { display: inline-block; opacity: 0; max-height: 0; overflow: hidden; margin-top: 0; transition: var(--ease); }
+.svc-card:hover .svc-link { opacity: 1; max-height: 40px; margin-top: 14px; }
 
 /* ── Listing Cards ── */
 .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
@@ -882,6 +884,7 @@ footer { background: #07111e; color: #6e8099; }
 .footer-contact p { font-size: .8rem; margin-bottom: 7px; line-height: 1.6; }
 .footer-contact a { color: #7a9ab8; }
 .footer-contact a:hover { color: #c8d8e8; }
+.footer-qr { border-radius: 8px; background: #fff; padding: 4px; }
 .footer-bottom {
   border-top: 1px solid #0d1e30;
   padding: 20px 0;
